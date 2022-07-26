@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="/portfolio/paginas/Ramadan/assets/css/style.css">
+    <meta name="description"
+        content="Site/currículo criado para mostrar quem de fato está se tornando Lucas Gonçalves" />
+    <meta name="author" content="Lucas Gonçalves" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/pwcode.jpg" />
+    <title>Ramadan</title>
+</head>
+
+<body>
+    <header>
+        <a href="#!" class="logo">PlayStation</a>
+        <div class="toggle"><i class="fas fa-bars"></i></div>
+        <ul class="navigation">
+            <li><a href="#!" style="--i:1" class="active">Game Controlles</a></li>
+            <li><a href="#!" style="--i:2">VR Accessories</a></li>
+            <li><a href="#!" style="--i:3">Media Remotes</a></li>
+            <li><a href="#!" style="--i:4">Others</a></li>
+        </ul>
+    </header>
+    <section>
+        <div class="content">
+            <div class="textBox">
+                <h2 class="animated" style="--s:1">PS4 V2<br>Dualshock 4</h2>
+                <p class="animated" style="--s:2">Wireless Controller for PlayStation 4</p>
+                <span class="animated" style="--s:3">(Compatible/Generic)</span>
+                <p><a class="animated" style="--s:4" href="#!">Read More</a></p>
+            </div>
+            <ul class="social">
+                <li><a href="#!" style="--i:1"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#!" style="--i:2"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#!" style="--i:3"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+        </div>
+        <div class="content-controll">
+            <img loading="lazy" src="/portfolio/paginas/Ramadan/assets/image/controll.png" class="controll" alt="Controll">
+        </div>
+
+    </section>
+    <script>
+        const menuToggle = document.querySelector('.toggle');
+        const icon = document.querySelector('.fas');
+        const navigation = document.querySelector('.navigation');
+
+        menuToggle.onclick = () => {
+            menuToggle.classList.toggle('active');
+            icon.classList.toggle('fa-times');
+            navigation.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

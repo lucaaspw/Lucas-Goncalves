@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+:root {
+    --yellow-dark: #d1953b;
+    --dark-blue: #021F3D;
+    --bg-light: #f5f6f8;
+    --bg-light-2: #e1e4ea;
+}
+
+body {
+    overflow: hidden;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+section header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+section header a.logo {
+    position: relative;
+    color: var(--yellow-dark);
+    display: inline-block;
+    font-size: 2em;
+    text-decoration: none;
+    font-weight: 800;
+    user-select: none;
+    opacity: 0;
+    animation: slide_left .5s linear forwards;
+    animation-delay: .2s;
+}
+
+@keyframes slide_left {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+section header .toggle {
+    display: none;
+}
+
+section header ul {
+    position: relative;
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    text-decoration: none;
+    display: inline-block;
+    color: var(--dark-blue);
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-left: 10px;
+    padding: 8px 18px;
+    user-select: none;
+    transition: .4s;
+    opacity: 0;
+    animation: slide_top .5s linear forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+@keyframes slide_top {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+header ul li a.active, header ul li a:hover {
+    background: var(--dark-blue);
+    color: var(--yellow-dark);
+    border-radius: 30px;
+}
+
+section .content {
+    position: relative;
+}
+
+section .content .textBox {
+    position: relative;
+    max-width: 550px;
+    opacity: 0;
+    animation: slide_left .5s linear forwards;
+    animation-delay: 1.2s;
+}
+
+section .content .textBox .animated {
+    opacity: 0;
+    animation: slide_left .5s linear forwards;
+    animation-delay: calc(.4s * var(--s));
+}
+
+section .content .textBox h2 {
+    color: var(--dark-blue);
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    line-height: 1.2em;
+    font-weight: 700;
+}
+
+section .content .textBox p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+section .content .textBox a {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: var(--yellow-dark);
+    color: var(--bg-light);
+    font-size: 1.2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 30px;
+}
+
+section .social {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: slide_bottom .7s linear forwards;
+    animation-delay: 1s;
+}
+
+section .social li {
+    list-style: none;
+}
+
+section .social li a {
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+    width: 50px;
+    height: 50px;
+    background: var(--dark-blue);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bg-light);
+    text-decoration: none;
+    transition: .2s ease-in-out;
+    opacity: 0;
+    animation: slide_bottom .5s linear forwards;
+    animation-delay: calc(1s * var(--i));
+}
+
+@keyframes slide_bottom {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+section .social li a:hover {
+    background: var(--yellow-dark);
+    transform: translateY(-10px);
+}
+
+section .mosque {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 700px;
+    opacity: 0;
+    animation: slide_right .5s linear forwards;
+    animation-delay: 1.7s;
+}
+
+@keyframes slide_right {
+    from {
+        transform: translateX(300px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+section.blocos{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 991px) {
+    section {
+        padding: 150px 20px;
+    }
+    section header {
+        padding: 20px;
+    }
+    .navigation {
+        display: none;
+        transition-delay: .4s;
+        animation: slide_right-menu .5s linear forwards;
+    }
+    @keyframes slide_right-menu {
+        from {
+            transform: translateX(300px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0px);
+            opacity: 1;
+        }
+    }
+    .navigation.active {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background: var(--bg-light);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .navigation li {
+        margin: 10px;
+    }
+    .navigation li a {
+        margin-left: 0;
+    }
+    .toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background: var(--dark-blue);
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex!important;
+        justify-content: center;
+        align-items: center;
+        color: var(--yellow-dark);
+        transition: .4s;
+        z-index: 1000;
+        animation: slide_bottom .5s linear forwards;
+    }
+    .toggle:hover {
+        background: var(--yellow-dark);
+        color: var(--dark-blue);
+    }
+    .toggle.active {
+        background: var(--yellow-dark);
+        color: var(--dark-blue);
+    }
+    section .mosque {
+        max-width: 500px;
+    }
+    section .content .textBox h2 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        align-items: flex-start;
+    }
+    @keyframes slide_right {
+        from {
+            transform: translateX(300px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0px);
+            opacity: .6;
+        }
+    }
+    .navigation.active {
+        width: 100%;
+    }
+    section .social {
+        bottom: 140px;
+    }
+}
+
+@media (max-width: 400px) {
+    section {
+        padding: 77px 20px!important;
+        display: flex;
+        align-items: flex-start;
+    }
+    section .content .textBox h2 {
+        font-size: 2.2em;
+    }
+    section .social {
+        bottom: 120px;
+    }
+}
